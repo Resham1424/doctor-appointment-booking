@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Git Init and Push",
+			"type": "shell",
+			"command": "git init && git add . && git commit -m \"Initial commit - Doctor Appointment Booking App by Shaik Resham\" && git branch -M main && git remote add origin https://github.com/Resham1424/doctor-appointment-booking.git && git push -u origin main"
+		},
+		{
+			"label": "Git Init",
+			"type": "shell",
+			"command": "git init"
+		}
+	]
+}
