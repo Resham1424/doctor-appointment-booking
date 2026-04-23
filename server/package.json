@@ -1,0 +1,14 @@
+{
+  "name": "server-root-wrapper",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
+  },
+  "scripts": {
+    "postinstall": "npm --prefix ./server install --legacy-peer-deps",
+    "start": "npm --prefix ./server start",
+    "server": "npm --prefix ./server run server"
+  }
+}
