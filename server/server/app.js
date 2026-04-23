@@ -4,6 +4,7 @@ const colors = require("colors");
 const cors = require("cors");
 require("dotenv").config();
 const path = require("path");
+const fs = require("fs");
 // Custom Imports
 const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
@@ -44,10 +45,16 @@ if (process.env.NODE_ENV === "production") {
     "build"
   );
 
-  app.use(express.static(clientBuildPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(clientBuildPath, "index.html"));
-  });
+  if (fs.existsSync(path.join(clientBuildPath, "index.html"))) {
+    app.use(express.static(clientBuildPath));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(clientBuildPath, "index.html"));
+    });
+  } else {
+    app.get("/", (req, res) => {
+      res.send("Doctor Appointment API is running...");
+    });
+  }
 } else {
   app.get("/", (req, res) => {
     res.send("Doctor Appointment API is running...");
