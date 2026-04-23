@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "build": "npm install --legacy-peer-deps && cd ../client && npm install --legacy-peer-deps && npm run build"
+    "build": "npm install --legacy-peer-deps && cd ../../client/client && npm install --legacy-peer-deps && npm run build"
   },
   "author": "Salman Muazam",
   "license": "ISC",
