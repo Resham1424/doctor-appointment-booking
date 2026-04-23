@@ -4,8 +4,8 @@
   "description": "Doctor Appointment App",
   "main": "server.js",
   "engines": {
-    "node": "18.14.2",
-    "npm": "9.5.0"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "scripts": {
     "start": "node server.js",
